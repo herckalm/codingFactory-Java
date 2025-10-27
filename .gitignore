@@ -5,7 +5,7 @@ out/
 .kotlin
 .idea/
 CodingFactoryTestBed.iml
-
+.out
 
 ### Eclipse ###
 .apt_generated
