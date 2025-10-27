@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class Menu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int choice;
+        int choice = 0;
         do {
             System.out.println("1. Εισαγωγή");
             System.out.println("2. Διαγραφή");
