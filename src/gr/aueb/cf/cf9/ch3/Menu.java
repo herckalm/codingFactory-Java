@@ -9,6 +9,8 @@ import java.util.Scanner;
  * again. If the user enters 5, the program exits, notifying the user of the
  * action. In any other case, a message is displayed notifying that the choice
  * was invalid, and the program continues as normal.
+ *
+ * @author Iraklis Kalamas
  */
 
 public class Menu {
