@@ -1,6 +1,6 @@
 package gr.aueb.cf.cf9.ch5;
 
-public class PrintArray1 {
+public class PrintArray {
     public static void main(String[] args) {
         int[] ages = {20, 25, 30, 33, 45, 19, 90, 55};
         printArray(ages, 0, ages.length - 1);
