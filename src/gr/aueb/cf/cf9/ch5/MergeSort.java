@@ -8,12 +8,13 @@ public class MergeSort {
         int[] arrayToSort = {55, 12, 87, 3, 91, 28, 70, 44, 16, 62, 5, 39};
         //int[] arrayToSort = {3, 5, 12, 16, 28, 39, 44, 55, 62, 70, 87, 91};
 
-        //printArray(arrayToSort, 0, arrayToSort.length - 1);
-        //int[] leftTest = mergeSortArray(arrayToSort, 0, arrayToSort.length - 1);
-        //printArray(leftTest, 0, leftTest.length - 1);
-        int[] rightTest = mergeSortArray(arrayToSort, 0, arrayToSort.length - 1);
-        printArray(rightTest, 0, rightTest.length - 1);
+        int[] merged = mergeSortArray(arrayToSort, 0, arrayToSort.length - 1);
 
+        System.out.println("Input array:");
+        printArray(arrayToSort, 0, arrayToSort.length - 1);
+
+        System.out.println("Sorted array:");
+        printArray(merged, 0, merged.length - 1);
     }
 
     public static int[] mergeSortArray(int[] arr, int first, int last) {
@@ -25,8 +26,36 @@ public class MergeSort {
         int[] left = mergeSortArray(arr, first, middle);
         int[] right = mergeSortArray(arr, middle + 1, last);
 
-        return right;
-        //return merge(left, right);
+        //return left;
+        return merge(left, right);
     }
 
+    public static int[] merge(int[] left, int[] right) {
+        int[] merged = new int[left.length + right.length];
+        int i = 0, j = 0, k = 0;
+
+        while ((i < left.length) && (j < right.length)) {
+            if (left[i] > right[j]) {
+                merged[k++] = right[j++];
+            } else {
+                merged[k++] = left[i++];
+            }
+        }
+
+        while (i < left.length) {
+            merged[k++] = left[i++];
+        }
+
+        while (j < right.length) {
+            merged[k++] = right[j++];
+        }
+        return merged;
+    }
 }
+
+
+//printArray(arrayToSort, 0, arrayToSort.length - 1);
+//int[] leftTest = mergeSortArray(arrayToSort, 0, arrayToSort.length - 1);
+//printArray(leftTest, 0, leftTest.length - 1);
+//int[] rightTest = mergeSortArray(arrayToSort, 0, arrayToSort.length - 1);
+//printArray(rightTest, 0, rightTest.length - 1);
